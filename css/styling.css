@@ -50,27 +50,27 @@ a {text-decoration: none; color: #000;}
   height: 100px;
   float: left;
     margin-right: 10px;}
-#room a:hover, #sessions a:hover {color: #1fb684;}
-#sessions a {
+#room a:hover, #tips a:hover {color: #1fb684;}
+#tips a {
   font-family: oswald, arial, sans-serif;
   font-size: 120%;}
-#sessions p {
+#tips p {
   margin-top: 2em;}
-#sessions ul {
+#tips ul {
   border-left: 1px solid #999;
   border-right: 1px solid #999;
   padding: 0px 20px 0px 20px;
   margin: 0px 0px 40px 0px;}
-#sessions li {
+#tips li {
   list-style-type: none;
   padding: 20px 0px 20px 0px;
   background-color: #fff;
   border-top: 1px solid #d6d6d6;
   text-align: left;}
-#sessions li:first-child {
+#tips li:first-child {
   border-top: none;
   padding-top: 1.8em;}
-#sessions li .time {
+#tips li .time {
   display: inline-block;
   width: 60px;}
 #details div {

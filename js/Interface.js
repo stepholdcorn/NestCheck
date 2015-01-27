@@ -22,7 +22,6 @@ $(function() {
 
   loadQuestions();
 
-
   // LOADS THE ROOM TIPS ON CLICK
   $('#container').on('click', '#room a', function(e) {
     e.preventDefault();
@@ -30,12 +29,11 @@ $(function() {
 
     var newContent = '';
     for (var i = 0; i < questions[loc].length; i++) {
-      newContent += '<li><a href="descriptions.html#';
-      newContent += questions[loc][i].title.replace(/ /g, '-') + '">';
+      newContent += '<li><a href="descriptions.html#">';
       newContent += questions[loc][i].title + '</a></li>';
     }
 
-    $('#sessions').html('<ul>' + newContent + '</ul>');
+    $('#tips').html('<ul>' + newContent + '</ul>');
 
     $('#room a.current').removeClass('current');
     $(this).addClass('current');
@@ -43,20 +41,16 @@ $(function() {
     $('#details').text('');
   });
 
+  // LOADS THE DESCRIPTION WHEN A TIP IS CLICKED
+  $('#container').on('click', '#tips li a', function(e) {
+    e.preventDefault();
+    var fragment = this.href;
+
+    fragment = fragment.replace('#', '  #');
+    $('#details').load(fragment);
+
+    $('#tips a.current').removeClass('current');
+    $(this).addClass('current');
+  });
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
