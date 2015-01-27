@@ -28,8 +28,9 @@ $(function() {
 
     var newList = '';
     for (var i = 0; i < areas[property].length; i++) {
-      newList += '<li>';
-      newList += areas[property][i].title + '</li>';
+      newList += '<a href="' + areas[property][i].title + '.html"'
+      newList += 'id="' + areas[property][i].title + '">';
+      newList += areas[property][i].title + '</a>';
     }
 
     $('#room').html('<ul>' + newList + '</ul>');
