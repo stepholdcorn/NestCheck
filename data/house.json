@@ -1,0 +1,49 @@
+{
+  "LIVING ROOM": [
+    {
+      "title": "Fireplace"
+    },
+    {
+      "title": "Plug Sockets"
+    }
+  ],
+
+  "KITCHEN": [
+    {
+      "title": "Oven"
+    },
+    {
+      "title": "Appliances"
+    }
+  ],
+
+  "BEDROOM": [
+    {
+      "title": "Positioning"
+    }
+  ],
+
+  "BATHROOM": [
+    {
+      "title": "Shower"
+    },
+    {
+      "title": "Water Pressure"
+    }
+  ],
+
+  "MISC": [
+    {
+      "title": "Boiler"
+    },
+    {
+      "title": "Fuse Box"
+    },
+    {
+      "title": "Internet"
+    },
+    {
+      "title": "Windows"
+    }
+  ]
+}
