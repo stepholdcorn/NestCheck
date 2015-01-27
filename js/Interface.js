@@ -61,7 +61,8 @@ $(function() {
 
     var newContent = '';
     for (var i = 0; i < questions[loc].length; i++) {
-      newContent += '<li><a href="descriptions.html#">';
+      newContent += '<li><a href="descriptions.html#';
+      newContent += questions[loc][i].title.replace(/ /g, '-') + '">';
       newContent += questions[loc][i].title + '</a></li>';
     }
 
@@ -74,7 +75,7 @@ $(function() {
   });
 
   // LOADS THE DESCRIPTION WHEN A TIP IS CLICKED
-  $('#ctainer').on('click', '#tips li a', function(e) {
+  $('#container').on('click', '#tips li a', function(e) {
     e.preventDefault();
     var fragment = this.href;
 
