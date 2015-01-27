@@ -10,16 +10,44 @@ $(function() {
     }
   });
 
-  // COLLECTS DATA FROM THE JSON FILE
-  function loadQuestions() {
+  // COLLECTS DATA FROM THE PROPERTY TYPE JSON FILE
+  function loadRooms() {
     $.getJSON('data/house.json')
+    .done( function(data){
+      areas = data;
+    }).fail( function() {
+      $('#choice').html('Sorry! We could not load the rooms at the moment');
+    });
+  }
+  loadRooms();
+
+  // LOADS THE ROOMS RELEVANT TO THE PROPERTY ON CLICK
+  $('#choice').on('click', '#type a', function(e) {
+    e.preventDefault();
+    var property = this.id.toUpperCase();
+
+    var newList = '';
+    for (var i = 0; i < areas[property].length; i++) {
+      newList += '<li>';
+      newList += areas[property][i].title + '</li>';
+    }
+
+    $('#room').html('<ul>' + newList + '</ul>');
+
+    $('#type a.current').removeClass('current');
+    $(this).addClass('current');
+
+  });
+
+  // COLLECTS DATA FROM THE TIPS JSON FILE
+  function loadQuestions() {
+    $.getJSON('data/rooms.json')
     .done( function(data){
       questions = data;
     }).fail( function() {
-      $('#room').html('Sorry! We could not load the questions at the moment');
+      $('#room').html('Sorry! We could not load the tips at the moment');
     });
   }
-
   loadQuestions();
 
   // LOADS THE ROOM TIPS ON CLICK
