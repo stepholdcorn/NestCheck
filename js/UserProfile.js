@@ -1,2 +1,8 @@
-var UserProfile = function() {};
+var UserProfile = function() {
+
+  this.userName = null;
+  this.propertyType = null;
+  this.roomList = null;
+
+};
 
