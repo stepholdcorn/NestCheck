@@ -15,3 +15,7 @@ UserProfile.prototype.enterName = function(name) {
   };
 };
 
+UserProfile.prototype.selectPropertyType = function(selection) {
+  this.propertyType = selection;
+};
+
