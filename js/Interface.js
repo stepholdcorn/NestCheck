@@ -28,7 +28,7 @@ $(function() {
 
     var newList = '';
     for (var i = 0; i < areas[property].length; i++) {
-      newList += '<a href="' + areas[property][i].title + '.html"'
+      newList += '<a href="' + areas[property][i].title + '.html"';
       newList += 'id="' + areas[property][i].title + '">';
       newList += areas[property][i].title + '</a>';
     }
@@ -37,6 +37,9 @@ $(function() {
 
     $('#type a.current').removeClass('current');
     $(this).addClass('current');
+
+    $('#tips').text('');
+    $('#details').text('');
 
   });
 
@@ -71,11 +74,11 @@ $(function() {
   });
 
   // LOADS THE DESCRIPTION WHEN A TIP IS CLICKED
-  $('#container').on('click', '#tips li a', function(e) {
+  $('#ctainer').on('click', '#tips li a', function(e) {
     e.preventDefault();
     var fragment = this.href;
 
-    fragment = fragment.replace('#', '  #');
+    fragment = fragment.replace('#', ' #');
     $('#details').load(fragment);
 
     $('#tips a.current').removeClass('current');
