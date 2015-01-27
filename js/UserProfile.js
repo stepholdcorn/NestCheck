@@ -6,3 +6,12 @@ var UserProfile = function() {
 
 };
 
+UserProfile.prototype.enterName = function(name) {
+  if (name === '') {
+    throw new Error ('Please enter your name');
+  }
+  else {
+  this.userName = name;
+  };
+};
+

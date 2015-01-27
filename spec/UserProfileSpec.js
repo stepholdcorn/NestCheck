@@ -22,4 +22,17 @@ describe('UserProfile', function() {
 
   });
 
+  describe('user input', function() {
+
+    it('should allow a name to be entered', function() {
+      userProfile.enterName('Steph');
+      expect(userProfile.userName).toEqual('Steph');
+    });
+
+    it('should prevent a blank name being entered', function() {
+      expect(function() { userProfile.enterName('') }).toThrow(new Error ('Please enter your name'));
+    });
+
+  });
+
 });
