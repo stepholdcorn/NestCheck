@@ -10,6 +10,16 @@ $(function() {
     }
   });
 
+  // DISPLAYS WELCOME MESSAGE
+  $('#user').on('submit', function(e) {
+    e.preventDefault();
+    var newName = $('input:text').val();
+    userProfile.enterName(newName);
+    $('h2').text('Welcome to NestCheck ' + userProfile.userName + '. What sort of property are you viewing?');
+    $('#user').hide();
+    $textInput.val('');
+  });
+
   // COLLECTS DATA FROM THE HOUSE JSON FILE
   function loadHouse() {
     $.getJSON('data/house.json')
