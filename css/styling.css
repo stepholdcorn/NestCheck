@@ -20,6 +20,21 @@ h1 {
   width: 225px;
   height: 90px;
 }
+/*KEEP THIS SECTION*/
+/**************************************/
+#user {
+  margin-bottom: 15cm;
+}
+
+#choice{
+  margin-bottom: 15cm;
+}
+
+#type {
+  font-size: 500%;
+  text-align: center;
+}
+/**************************************/
 
 a {text-decoration: none; color: #000;}
 
