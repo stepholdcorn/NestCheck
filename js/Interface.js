@@ -14,55 +14,66 @@ $(function() {
   function loadHouse() {
     $.getJSON('data/house.json')
     .done( function(data){
-      areas = data;
+      houseAreas = data;
     }).fail( function() {
       $('#choice').html('Sorry! We could not load the house at the moment');
     });
   }
+  loadHouse();
 
   // COLLECTS DATA FROM THE APARTMENT JSON FILE
   function loadApartment() {
     $.getJSON('data/apartment.json')
     .done( function(data){
-      areas = data;
+      apartmentAreas = data;
     }).fail( function() {
       $('#choice').html('Sorry! We could not load the apartment at the moment');
     });
   }
+  loadApartment();
 
-  // LOADS THE ROOMS BASED ON PROPERTY SELECTION
+  // LOADS THE ROOMS ON CLICK
   $('#choice').on('click', '#type a', function(e) {
     e.preventDefault();
     property = this.id.toUpperCase();
     userProfile.selectPropertyType(property);
-    loadProperty();
-    createRoomList();
+    listCheck();
 
     $('#type a.current').removeClass('current');
     $(this).addClass('current');
 
     $('#tips').text('');
     $('#details').text('');
-
   });
 
-  // SELECTS THE CORRECT JSON FILE
-  function loadProperty() {
+  // CHECKS WHICH LIST TO LOAD BASED ON USER'S SELECTION
+  function listCheck() {
     if (userProfile.propertyType === "HOUSE"){
-      loadHouse();
+      createHouseRoomList();
     }
     else {
-      loadApartment();
+      createApartmentRoomList();
     };
   }
 
-  // CREATES THE LIST OF ROOMS
-  function createRoomList() {
+  // CREATES THE LIST OF HOUSE ROOMS
+  function createHouseRoomList() {
     var newList = '';
-    for (var i = 0; i < areas[property].length; i++) {
-      newList += '<a href="' + areas[property][i].title + '.html"';
-      newList += 'id="' + areas[property][i].title + '">';
-      newList += areas[property][i].title + '</a>';
+    for (var i = 0; i < houseAreas[property].length; i++) {
+      newList += '<a href="' + houseAreas[property][i].title + '.html"';
+      newList += 'id="' + houseAreas[property][i].title + '">';
+      newList += houseAreas[property][i].title + '</a>';
+    }
+    $('#room').html('<ul>' + newList + '</ul>');
+  }
+
+  // CREATES THE LIST OF APARTMENT ROOMS
+  function createApartmentRoomList() {
+    var newList = '';
+    for (var i = 0; i < apartmentAreas[property].length; i++) {
+      newList += '<a href="' + apartmentAreas[property][i].title + '.html"';
+      newList += 'id="' + apartmentAreas[property][i].title + '">';
+      newList += apartmentAreas[property][i].title + '</a>';
     }
     $('#room').html('<ul>' + newList + '</ul>');
   }
@@ -76,11 +87,11 @@ $(function() {
       $('#room').html('Sorry! We could not load the tips at the moment');
     });
   }
+  loadTips();
 
   // LOADS THE ROOM TIPS ON CLICK
   $('#container').on('click', '#room a', function(e) {
     e.preventDefault();
-    loadTips();
     heading = this.id.toUpperCase();
     createTipList();
 
