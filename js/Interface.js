@@ -11,7 +11,7 @@ $(function() {
   });
 
   $('#choice').hide();
-  $('#container').hide();
+  $('#content').hide();
 
   // DISPLAYS WELCOME MESSAGE
   $('#user').on('submit', function(e) {
@@ -51,9 +51,9 @@ $(function() {
   // LOADS THE ROOMS ON CLICK
   $('#choice').on('click', '#type a', function(e) {
     e.preventDefault();
-    $('#container').show();
+    $('#content').show();
     $('html, body').animate({
-        scrollTop: $("#container").offset().top
+        scrollTop: $("#content").offset().top
     }, 1000);
     property = this.id.toUpperCase();
     userProfile.selectPropertyType(property);
@@ -80,9 +80,9 @@ $(function() {
   function createHouseRoomList() {
     var newList = '';
     for (var i = 0; i < houseAreas[property].length; i++) {
-      newList += '<a href="' + houseAreas[property][i].title + '.html"';
+      newList += '<li><a href="' + houseAreas[property][i].title + '.html"';
       newList += 'id="' + houseAreas[property][i].title + '">';
-      newList += houseAreas[property][i].title + '</a>';
+      newList += houseAreas[property][i].title + '</a></li>';
     }
     $('#room').html('<ul>' + newList + '</ul>');
   }
@@ -91,9 +91,9 @@ $(function() {
   function createApartmentRoomList() {
     var newList = '';
     for (var i = 0; i < apartmentAreas[property].length; i++) {
-      newList += '<a href="' + apartmentAreas[property][i].title + '.html"';
+      newList += '<li><a href="' + apartmentAreas[property][i].title + '.html"';
       newList += 'id="' + apartmentAreas[property][i].title + '">';
-      newList += apartmentAreas[property][i].title + '</a>';
+      newList += apartmentAreas[property][i].title + '</a></li>';
     }
     $('#room').html('<ul>' + newList + '</ul>');
   }
@@ -110,7 +110,7 @@ $(function() {
   loadTips();
 
   // LOADS THE ROOM TIPS ON CLICK
-  $('#container').on('click', '#room a', function(e) {
+  $('#content').on('click', '#room a', function(e) {
     e.preventDefault();
     heading = this.id.toUpperCase();
     createTipList();
@@ -118,7 +118,7 @@ $(function() {
     $('#room a.current').removeClass('current');
     $(this).addClass('current');
 
-    $('#details').text('');
+    $('#details').text('Click on a tip for more information');
   });
 
   // CREATES THE TIPS LIST
@@ -134,12 +134,14 @@ $(function() {
   }
 
   // LOADS THE DESCRIPTION WHEN A TIP IS CLICKED
-  $('#container').on('click', '#tips li a', function(e) {
+  $('#content').on('click', '#tips li a', function(e) {
     e.preventDefault();
     var fragment = this.href;
 
     fragment = fragment.replace('#', ' #');
-    $('#details').load(fragment);
+    $('#details').hide().load(fragment, function() {
+      $(this).fadeIn(1500);
+    });
 
     $('#tips a.current').removeClass('current');
     $(this).addClass('current');

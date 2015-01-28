@@ -42,4 +42,38 @@ h4 {
   width: 33.33%;
   float: left;
   text-align: left;
+  margin-bottom: 60%;
+}
+
+ul {
+  line-height: 400%;
+  font-size: 110%;
+  list-style: none;
+}
+
+#room {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+}
+
+#details {
+  padding-top: 10%;
+}
+
+#nav-prompt {
+  padding-top: 20%;
 }
