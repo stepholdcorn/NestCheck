@@ -11,15 +11,18 @@ $(function() {
   });
 
   $('#choice').hide();
+  $('#container').hide();
 
   // DISPLAYS WELCOME MESSAGE
   $('#user').on('submit', function(e) {
     e.preventDefault();
     var newName = $('input:text').val();
     userProfile.enterName(newName);
-    $('h2').text('Welcome to NestCheck ' + userProfile.userName + '. What sort of property are you viewing?');
-    $('#user').hide();
+    $('#welcome').text('Welcome to NestCheck ' + userProfile.userName);
     $('#choice').show();
+    $('html, body').animate({
+        scrollTop: $("#choice").offset().top
+    }, 1000);
     $textInput.val('');
   });
 
@@ -48,6 +51,7 @@ $(function() {
   // LOADS THE ROOMS ON CLICK
   $('#choice').on('click', '#type a', function(e) {
     e.preventDefault();
+    $('#container').show();
     $('html, body').animate({
         scrollTop: $("#container").offset().top
     }, 1000);
@@ -58,7 +62,7 @@ $(function() {
     $('#type a.current').removeClass('current');
     $(this).addClass('current');
 
-    $('#tips').text('');
+    $('#tips').text('Select a room from the left');
     $('#details').text('');
   });
 
