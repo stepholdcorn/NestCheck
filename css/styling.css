@@ -1,5 +1,6 @@
 body {
   background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
   width: 960px;
   margin: 0px auto 0px auto;
 }
@@ -33,8 +34,7 @@ h4 {
 }
 
 #type {
-  font-size: 500%;
-  text-align: center;
+  margin-left: 25%;
 }
 /**************************************/
 
