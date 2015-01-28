@@ -30,25 +30,13 @@ $(function() {
     });
   }
 
-  // ASSIGNS THE USER'S CHOICE TO THEIR PROFILE
+  // LOADS THE ROOMS BASED ON PROPERTY SELECTION
   $('#choice').on('click', '#type a', function(e) {
     e.preventDefault();
-    var property = this.id.toUpperCase();
+    property = this.id.toUpperCase();
     userProfile.selectPropertyType(property);
-    if (userProfile.propertyType === "HOUSE"){
-      loadHouse();
-    }
-    else {
-      loadApartment();
-    };
-    var newList = '';
-    for (var i = 0; i < areas[property].length; i++) {
-      newList += '<a href="' + areas[property][i].title + '.html"';
-      newList += 'id="' + areas[property][i].title + '">';
-      newList += areas[property][i].title + '</a>';
-    }
-
-    $('#room').html('<ul>' + newList + '</ul>');
+    loadProperty();
+    createRoomList();
 
     $('#type a.current').removeClass('current');
     $(this).addClass('current');
@@ -58,36 +46,61 @@ $(function() {
 
   });
 
+  // SELECTS THE CORRECT JSON FILE
+  function loadProperty() {
+    if (userProfile.propertyType === "HOUSE"){
+      loadHouse();
+    }
+    else {
+      loadApartment();
+    };
+  }
+
+  // CREATES THE LIST OF ROOMS
+  function createRoomList() {
+    var newList = '';
+    for (var i = 0; i < areas[property].length; i++) {
+      newList += '<a href="' + areas[property][i].title + '.html"';
+      newList += 'id="' + areas[property][i].title + '">';
+      newList += areas[property][i].title + '</a>';
+    }
+    $('#room').html('<ul>' + newList + '</ul>');
+  }
+
   // COLLECTS DATA FROM THE TIPS JSON FILE
-  function loadQuestions() {
+  function loadTips() {
     $.getJSON('data/rooms.json')
     .done( function(data){
-      questions = data;
+      tips = data;
     }).fail( function() {
       $('#room').html('Sorry! We could not load the tips at the moment');
     });
   }
-  loadQuestions();
 
   // LOADS THE ROOM TIPS ON CLICK
   $('#container').on('click', '#room a', function(e) {
     e.preventDefault();
-    var loc = this.id.toUpperCase();
-
-    var newContent = '';
-    for (var i = 0; i < questions[loc].length; i++) {
-      newContent += '<li><a href="descriptions.html#';
-      newContent += questions[loc][i].title.replace(/ /g, '-') + '">';
-      newContent += questions[loc][i].title + '</a></li>';
-    }
-
-    $('#tips').html('<ul>' + newContent + '</ul>');
+    loadTips();
+    heading = this.id.toUpperCase();
+    createTipList();
 
     $('#room a.current').removeClass('current');
     $(this).addClass('current');
 
     $('#details').text('');
   });
+
+  // CREATES THE TIPS LIST
+  function createTipList() {
+    var newContent = '';
+    for (var i = 0; i < tips[heading].length; i++) {
+      newContent += '<li><a href="descriptions.html#';
+      newContent += tips[heading][i].title.replace(/ /g, '-') + '">';
+      newContent += tips[heading][i].title + '</a></li>';
+    }
+
+    $('#tips').html('<ul>' + newContent + '</ul>');
+  }
 
   // LOADS THE DESCRIPTION WHEN A TIP IS CLICKED
   $('#container').on('click', '#tips li a', function(e) {
