@@ -1,24 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald:700,400);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
 body {
   background-color: #fff;
-  color: #666;
-  font-family: 'Open Sans', arial, sans-serif;
   width: 960px;
-  margin: 0px auto 0px auto;}
-
-header {
-  height: 140px;
-  border-bottom: 5px solid #000;
-  margin-bottom: 30px;}
+  margin: 0px auto 0px auto;
+}
 
 h1 {
-  font-weight: normal;
-  margin: 28px 0px 0px 0px;
-  float: left;
-  width: 225px;
-  height: 90px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 300%;
 }
 /*KEEP THIS SECTION*/
 /**************************************/
@@ -26,7 +15,7 @@ h1 {
   margin-bottom: 15cm;
 }
 
-#choice{
+#choice {
   margin-bottom: 15cm;
 }
 
@@ -36,61 +25,8 @@ h1 {
 }
 /**************************************/
 
-a {text-decoration: none; color: #000;}
-
-.column, .room {
-  width: 320px;
+.column {
+  width: 33.33%;
   float: left;
-  text-align: center;}
-
-.room p {border-right: 1px solid #999; }
-#container .room:last-child p {border-right: none;}
-
-.column p {
-  padding: 0px 20px 0px 20px;
-  margin: 40px 0px 20px 0px;
   text-align: left;
-  line-height: 1.4em;}
-
-#room a {
-  font-family: oswald, arial, sans-serif;
-  font-size: 120%;
-  text-transform: uppercase;
-  text-align: left;
-  line-height: 4.5em;
-  display: block;
-  height: 120px; width: 100%;}
-#room img {
-  width: 100px;
-  height: 100px;
-  float: left;
-    margin-right: 10px;}
-#room a:hover, #tips a:hover {color: #1fb684;}
-#tips a {
-  font-family: oswald, arial, sans-serif;
-  font-size: 120%;}
-#tips p {
-  margin-top: 2em;}
-#tips ul {
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-  padding: 0px 20px 0px 20px;
-  margin: 0px 0px 40px 0px;}
-#tips li {
-  list-style-type: none;
-  padding: 20px 0px 20px 0px;
-  background-color: #fff;
-  border-top: 1px solid #d6d6d6;
-  text-align: left;}
-#tips li:first-child {
-  border-top: none;
-  padding-top: 1.8em;}
-#tips li .time {
-  display: inline-block;
-  width: 60px;}
-#details div {
-  text-align: left;
-  padding: 1.8em 0em 0em 1em;}
-#details p {
-  padding: 0px;
-  margin: 0.8em 0em 0em 0em;}
+}
