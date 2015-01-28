@@ -1,5 +1,5 @@
 {
-  "HOUSE": [
+  "APARTMENT": [
     {
       "title": "lounge"
     },
@@ -13,12 +13,8 @@
       "title": "bathroom"
     },
     {
-      "title": "garden"
-    },
-    {
       "title": "misc"
     }
+
   ]
 }
-
-

@@ -32,6 +32,18 @@
     }
   ],
 
+  "GARDEN": [
+    {
+      "title": "Trees"
+    },
+    {
+      "title": "Direction"
+    },
+    {
+      "title": "Shed"
+    }
+  ],
+
   "MISC": [
     {
       "title": "Boiler"

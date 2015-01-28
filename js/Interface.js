@@ -1,7 +1,7 @@
 $(function() {
 
   //SETUP
-  var questions;
+  var userProfile = new UserProfile;
   $.ajax({
     beforeSend: function(xhr) {
       if (xhr.overrideMimeType) {
@@ -10,22 +10,37 @@ $(function() {
     }
   });
 
-  // COLLECTS DATA FROM THE PROPERTY TYPE JSON FILE
-  function loadRooms() {
+  // COLLECTS DATA FROM THE HOUSE JSON FILE
+  function loadHouse() {
     $.getJSON('data/house.json')
     .done( function(data){
       areas = data;
     }).fail( function() {
-      $('#choice').html('Sorry! We could not load the rooms at the moment');
+      $('#choice').html('Sorry! We could not load the house at the moment');
     });
   }
-  loadRooms();
 
-  // LOADS THE ROOMS RELEVANT TO THE PROPERTY ON CLICK
+  // COLLECTS DATA FROM THE APARTMENT JSON FILE
+  function loadApartment() {
+    $.getJSON('data/apartment.json')
+    .done( function(data){
+      areas = data;
+    }).fail( function() {
+      $('#choice').html('Sorry! We could not load the apartment at the moment');
+    });
+  }
+
+  // ASSIGNS THE USER'S CHOICE TO THEIR PROFILE
   $('#choice').on('click', '#type a', function(e) {
     e.preventDefault();
     var property = this.id.toUpperCase();
-
+    userProfile.selectPropertyType(property);
+    if (userProfile.propertyType === "HOUSE"){
+      loadHouse();
+    }
+    else {
+      loadApartment();
+    };
     var newList = '';
     for (var i = 0; i < areas[property].length; i++) {
       newList += '<a href="' + areas[property][i].title + '.html"';
