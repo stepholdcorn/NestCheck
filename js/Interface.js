@@ -10,6 +10,7 @@ $(function() {
     }
   });
 
+  $('#location').hide();
   $('#choice').hide();
   $('#content').hide();
   $(':submit').hide();
@@ -25,9 +26,9 @@ $(function() {
     var newName = $('input:text').val();
     userProfile.enterName(newName);
     $('#welcome').text('Welcome to NestCheck ' + userProfile.userName);
-    $('#choice').show();
+    $('#location').show();
     $('html, body').animate({
-        scrollTop: $("#choice").offset().top
+        scrollTop: $("#location").offset().top
     }, 1000);
     $textInput.val('');
   });

@@ -17,11 +17,21 @@
         <input type="text" id="textarea" name="username" placeholder="Name">
         <input type="submit" id="button" value="Enter">
       </form>
-   </section>
+    </section>
+
+    <section id="location">
+      <h1 id="welcome"></h1>
+      <h3 id="explore">Let's start by having a look at the area</h3>
+
+      <div id="panel">
+        <input id="address" type="textbox" value="London">
+        <input type="button" value="Geocode" onclick="codeAddress()">
+      </div>
+      <div id="map-canvas"></div>
+    </section>
 
     <section id="choice">
-      <h1 id="welcome"></h1>
-      <h3 id="prompt">What sort of property are you viewing?</h3>
+      <h1 id="prompt">What sort of property are you viewing?</h1>
       <p id="type">
         <a id="house" href="house.html">
           <img src="img/house.svg" alt="House">
@@ -48,6 +58,8 @@
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="js/Interface.js"></script>
     <script src="js/UserProfile.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="js/Map.js"></script>
   </body>
 
 </html>

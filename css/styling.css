@@ -29,10 +29,6 @@ h4 {
   margin-bottom: -2%;
 }
 
-#prompt {
-  margin-top: 12%;
-}
-
 #textarea {
   border: none;
   border-radius: 2%;
@@ -53,8 +49,35 @@ h4 {
   margin-bottom: 60%;
 }
 
+#location {
+  margin-bottom: 60%;
+}
+
+#welcome {
+  font-size: 300%;
+}
+
+#explore {
+  margin-top: 12%;
+}
+
+#map-canvas {
+  height: 400px;
+  width: 400px;
+}
+
+#panel {
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
 #choice {
   margin-bottom: 60%;
+}
+
+#prompt {
+  margin-top: 12%;
 }
 
 #type {
