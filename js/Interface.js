@@ -12,6 +12,12 @@ $(function() {
 
   $('#choice').hide();
   $('#content').hide();
+  $(':submit').hide();
+
+  // DISPLAYS ENTER BUTTON ON CLICK
+  $('#user').on('click', function(e) {
+    $(':submit').fadeIn(1500);
+  });
 
   // DISPLAYS WELCOME MESSAGE
   $('#user').on('submit', function(e) {
