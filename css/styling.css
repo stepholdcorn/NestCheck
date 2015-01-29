@@ -35,7 +35,7 @@ h4 {
   font-size: 120%;
 }
 
-#button {
+.submit {
   background: none;
   border: none;
   border-radius: 8%;
@@ -61,15 +61,27 @@ h4 {
   margin-top: 12%;
 }
 
+#map-text {
+  float: left
+}
+
 #map-canvas {
+  float: right;
   height: 400px;
   width: 400px;
 }
 
 #panel {
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
+  text-align: center;
+  margin-top: -2%;
+  margin-bottom: 5%;
+  background-color: #3F5456;
+  padding: 1%;
+}
+
+#next {
+  margin-top: 40%;
+  margin-left: 45%;
 }
 
 #choice {

@@ -10,7 +10,6 @@ $(function() {
     }
   });
 
-  $('#location').hide();
   $('#choice').hide();
   $('#content').hide();
   $(':submit').hide();
@@ -31,6 +30,14 @@ $(function() {
         scrollTop: $("#location").offset().top
     }, 1000);
     $textInput.val('');
+  });
+
+  // MOVES FROM MAP TO CHOICE PAGE
+  $('#next').on('click', function() {
+    $('#choice').show();
+    $('html, body').animate({
+        scrollTop: $("#choice").offset().top
+    }, 1000);
   });
 
   // COLLECTS DATA FROM THE HOUSE JSON FILE
