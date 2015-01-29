@@ -17,6 +17,7 @@ You never need to go to a property viewing unprepared again! This program allows
 - JQuery
 - Ajax
 - JSON
+- Google Maps API
 - Jasmine
 - HTML
 - CSS
@@ -28,7 +29,7 @@ You never need to go to a property viewing unprepared again! This program allows
 - [x] Displays list of rooms/areas relevant to property type
 - [x] Displays tips relevant to each room/area when clicked
 - [x] Displays further information for each tip when clicked
-- [ ] Allows user to enter the postcode of the property to display it on an integrated google map
+- [x] Allows user to enter the postcode of the property to display it on an integrated google map
 
 ## Still to complete/refactor
 
@@ -37,6 +38,7 @@ You never need to go to a property viewing unprepared again! This program allows
 ## Takeaway
 
 - I learnt how to use Ajax and JSON data following Jon Duckett's JavaScript & JQuery book. I followed a tutorial from this book to create the room list, tips and details section.
+- I experimented with the Google Maps API.
 - This project enabled me to take a further look into what can be achieved with JQuery.
 - I was able to make the program into a one page site that moves you to the next area on click.
 - Clearly label what is going on in the JQuery file and refactor as you go along, otherwise things get pretty ugly, pretty quickly!
