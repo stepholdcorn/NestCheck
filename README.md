@@ -1,6 +1,8 @@
 NestCheck - Makers Academy Reading Week Project
 ===============================================
 
+[![Code Climate](https://codeclimate.com/github/stepholdcorn/NestCheck/badges/gpa.svg)](https://codeclimate.com/github/stepholdcorn/NestCheck)
+
 ## Synopsis
 
 ###Buying a house?
