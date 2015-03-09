@@ -1,5 +1,5 @@
-NestCheck
-=======================
+NestCheck - Makers Academy Reading Week Project
+===============================================
 
 ## Synopsis
 
